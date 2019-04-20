@@ -39,7 +39,7 @@ export const rootReducer = (state = initialState, action) => {
     case FETCH_SUCCESS:
       return {
         ...state,
-        smurfs: [...state.smurfs, ...action.payload.results], //careful on results here. May just be payload.
+        smurfs: [...state.smurfs, ...action.payload], //careful on results here. May just be payload.
         isFetching: false
       };
     case FETCH_FAIL:
@@ -55,7 +55,7 @@ export const rootReducer = (state = initialState, action) => {
     case ADD_SUCCESS:
       return {
         ...state,
-        smurfs: [...state.smurfs, ...action.payload.results],
+        smurfs: [...action.payload],
         addingSmurf: false
       };
     case ADD_FAIL:
